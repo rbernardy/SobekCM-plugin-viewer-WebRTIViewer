@@ -3680,69 +3680,120 @@
             <param name="StoreObject"> CompleteTemplate object for online submissions and editing to store</param>
             <param name="Tracer"> Trace object keeps a list of each method executed and important milestones in rendering</param>
         </member>
-        <member name="T:SobekCM.Library.CKEditor.CKEditor">
+        <member name="T:SobekCM.Library.Helpers.AceEditor.AceEditor_Mode">
+            <summary> Enumeration for the mode for the Ace Editor </summary>
+        </member>
+        <member name="F:SobekCM.Library.Helpers.AceEditor.AceEditor_Mode.UNDEFINED">
+            <summary> The mode for this Ace editor has not been defined </summary>
+        </member>
+        <member name="F:SobekCM.Library.Helpers.AceEditor.AceEditor_Mode.CSS">
+            <summary> This Ace editor will be used for editing CSS stylesheets </summary>
+        </member>
+        <member name="F:SobekCM.Library.Helpers.AceEditor.AceEditor_Mode.HTML">
+            <summary> THis Ace editor will be used for editing HTML </summary>
+            <remarks> This is currently not supported (as of 12/2016), as CKEditor is used for HTML editing </remarks>
+        </member>
+        <member name="F:SobekCM.Library.Helpers.AceEditor.AceEditor_Mode.Javascript">
+            <summary> This Ace editor will be used for editing Javascript code </summary>
+        </member>
+        <member name="F:SobekCM.Library.Helpers.AceEditor.AceEditor_Mode.XML">
+            <summary> This Ace editor will be used for editing XML code </summary>
+        </member>
+        <member name="T:SobekCM.Library.Helpers.AceEditor.AceEditor">
+            <summary> Class is used to write the HTML to allow users to edit content using
+            the Ace editor library </summary>
+            <remarks> This is primarily utilized for CSS and Javascript editing currently </remarks>
+        </member>
+        <member name="M:SobekCM.Library.Helpers.AceEditor.AceEditor.#ctor">
+            <summary> Constructor for a new instance of the AceEditor class </summary>
+        </member>
+        <member name="M:SobekCM.Library.Helpers.AceEditor.AceEditor.#ctor(SobekCM.Library.Helpers.AceEditor.AceEditor_Mode)">
+            <summary> Constructor for a new instance of the AceEditor class </summary>
+            <param name="Mode"> Current mode for this editor ( i.e., CSS, Javascript, or HTML editing ) </param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SobekCM.Library.Helpers.AceEditor.AceEditor.Add_To_Stream(System.IO.TextWriter,System.String)" -->
+        <member name="M:SobekCM.Library.Helpers.AceEditor.AceEditor.Add_To_Stream(System.IO.TextWriter,System.String,System.Boolean)">
+            <summary> Add the Ace editor and all the necessary html/javascript to enable an Ace editor here on the page </summary>
+            <param name="Output"> Writer to write to the stream </param>
+            <param name="Contents"></param>
+            <param name="Include_Script_Reference"> Flag indicates if the Ace script reference should be
+            added to the output stream here (might not if there are multiple AceEditor areas on the same page )</param>
+        </member>
+        <member name="P:SobekCM.Library.Helpers.AceEditor.AceEditor.Mode">
+            <summary> Current mode for this editor ( i.e., CSS, Javascript, or HTML editing ) </summary>
+        </member>
+        <member name="P:SobekCM.Library.Helpers.AceEditor.AceEditor.ContentsId">
+            <summary> HTML ID used to pull this data back when the page is posted back to the server </summary>
+        </member>
+        <member name="P:SobekCM.Library.Helpers.AceEditor.AceEditor.EditorId">
+            <summary> HTML ID for the editor itself, used to add styling around the editor </summary>
+        </member>
+        <member name="P:SobekCM.Library.Helpers.AceEditor.AceEditor.BaseUrl">
+            <summary> Current base url, used to point to the ACE javascript </summary>
+        </member>
+        <member name="T:SobekCM.Library.Helpers.CKEditor.CKEditor">
             <summary> Class is used to write the HTML to allow users to edit web (HTML) content using
             the CKEditor jquery library </summary>
         </member>
-        <member name="M:SobekCM.Library.CKEditor.CKEditor.#ctor">
+        <member name="M:SobekCM.Library.Helpers.CKEditor.CKEditor.#ctor">
             <summary> Constructor for a new instance of the CKEditor class </summary>
         </member>
-        <member name="M:SobekCM.Library.CKEditor.CKEditor.Add_To_Stream(System.IO.TextWriter)">
+        <member name="M:SobekCM.Library.Helpers.CKEditor.CKEditor.Add_To_Stream(System.IO.TextWriter)">
             <summary> Add the file input and the necessary script section, with
             all the options specfiedi here, directly to the streamwriter </summary>
             <param name="Output"> Writer to write to the stream </param>
         </member>
-        <member name="M:SobekCM.Library.CKEditor.CKEditor.Add_To_Stream(System.IO.TextWriter,System.Boolean)">
+        <member name="M:SobekCM.Library.Helpers.CKEditor.CKEditor.Add_To_Stream(System.IO.TextWriter,System.Boolean)">
             <summary> Add the file input and the necessary script section, with
             all the options specfiedi here, directly to the streamwriter </summary>
             <param name="Output"> Writer to write to the stream </param>
             <param name="Include_Script_Reference"> Flag indicates if the CKEditor script reference should be
             added to the output stream here </param>
         </member>
-        <member name="M:SobekCM.Library.CKEditor.CKEditor.HTML_To_Write">
+        <member name="M:SobekCM.Library.Helpers.CKEditor.CKEditor.HTML_To_Write">
             <summary> Returns the HTML to add a file input and the necessary
             script section to enable UploadiFive with these options </summary>
             <returns> HTML as a string </returns>
         </member>
-        <member name="P:SobekCM.Library.CKEditor.CKEditor.BaseUrl">
+        <member name="P:SobekCM.Library.Helpers.CKEditor.CKEditor.BaseUrl">
             <summary> Base URL for the system </summary>
         </member>
-        <member name="P:SobekCM.Library.CKEditor.CKEditor.ImageBrowser_ListUrl">
+        <member name="P:SobekCM.Library.Helpers.CKEditor.CKEditor.ImageBrowser_ListUrl">
             <summary> URL for the JSON for the Image Browser plug-in, which tells which 
             files are on the server when the user browser the server while adding an image to the HTML </summary>
         </member>
-        <member name="P:SobekCM.Library.CKEditor.CKEditor.UploadPath">
+        <member name="P:SobekCM.Library.Helpers.CKEditor.CKEditor.UploadPath">
             <summary> Path where the uploaded files should go </summary>
         </member>
-        <member name="P:SobekCM.Library.CKEditor.CKEditor.UploadURL">
+        <member name="P:SobekCM.Library.Helpers.CKEditor.CKEditor.UploadURL">
             <summary> URL where the uploaded files go, to return the uploaded file URL </summary>
         </member>
-        <member name="P:SobekCM.Library.CKEditor.CKEditor.TextAreaID">
+        <member name="P:SobekCM.Library.Helpers.CKEditor.CKEditor.TextAreaID">
             <summary> ID of the existing text area where the HTML to edit resides </summary>
         </member>
-        <member name="P:SobekCM.Library.CKEditor.CKEditor.Language">
+        <member name="P:SobekCM.Library.Helpers.CKEditor.CKEditor.Language">
             <summary> Language to use for the interface </summary>
         </member>
-        <member name="P:SobekCM.Library.CKEditor.CKEditor.FileBrowser_ImageUploadUrl">
+        <member name="P:SobekCM.Library.Helpers.CKEditor.CKEditor.FileBrowser_ImageUploadUrl">
             <summary> URL for the file upload handler on the server </summary>
         </member>
-        <member name="P:SobekCM.Library.CKEditor.CKEditor.Start_In_Source_Mode">
+        <member name="P:SobekCM.Library.Helpers.CKEditor.CKEditor.Start_In_Source_Mode">
             <summary> Flag indicates if it should start in source mode </summary>
         </member>
-        <member name="T:SobekCM.Library.CKEditor.CKEditor_Security_Token">
+        <member name="T:SobekCM.Library.Helpers.CKEditor.CKEditor_Security_Token">
             <summary> Token used to add security, via adding a key to the session
             state, for uploading documents using CKEditor through this system </summary>
         </member>
-        <member name="F:SobekCM.Library.CKEditor.CKEditor_Security_Token.UploadPath">
+        <member name="F:SobekCM.Library.Helpers.CKEditor.CKEditor_Security_Token.UploadPath">
             <summary> Path where the uploaded files should go </summary>
         </member>
-        <member name="F:SobekCM.Library.CKEditor.CKEditor_Security_Token.UploadURL">
+        <member name="F:SobekCM.Library.Helpers.CKEditor.CKEditor_Security_Token.UploadURL">
             <summary> URL where the uploaded files go, to return the uploaded file URL </summary>
         </member>
-        <member name="F:SobekCM.Library.CKEditor.CKEditor_Security_Token.ThisGuid">
+        <member name="F:SobekCM.Library.Helpers.CKEditor.CKEditor_Security_Token.ThisGuid">
             <summary> The GUID for this security token </summary>
         </member>
-        <member name="M:SobekCM.Library.CKEditor.CKEditor_Security_Token.#ctor(System.String,System.String)">
+        <member name="M:SobekCM.Library.Helpers.CKEditor.CKEditor_Security_Token.#ctor(System.String,System.String)">
             <summary> Constructor for a new instance of the CKEditor_Security_Token class </summary>
             <param name="UploadPath"> Path where the uploaded files should go </param>
             <param name="UploadURL"> URL where the uploaded files go, to return the uploaded file URL </param>
@@ -4468,71 +4519,6 @@
             <summary> Gets the names to show in the Go To combo box </summary>
             <value> This returns the labels assigned to each page, or 'Page 1', 'Page 2, etc.. if none
             of the pages have an existing label </value>
-        </member>
-        <member name="M:SobekCM.Library.ItemViewer.Viewers.RTI_ItemViewer.#ctor(SobekCM.Core.BriefItem.BriefItemInfo,SobekCM.Core.Users.User_Object,SobekCM.Core.Navigation.Navigation_Object,SobekCM.Tools.Custom_Tracer)">
-            <summary> Constructor for a new instance of the RTI_ItemViewer class, used to display a RTI file from a digital resource </summary>
-            <param name="BriefItem"> Digital resource object </param>
-            <param name="CurrentUser"> Current user, who may or may not be logged on </param>
-            <param name="CurrentRequest"> Information about the current request </param>
-            <param name="Tracer"> Trace object keeps a list of each method executed and important milestones in rendering </param>
-        </member>
-        <member name="M:SobekCM.Library.ItemViewer.Viewers.RTI_ItemViewer.Write_Main_Viewer_Section(System.IO.TextWriter,SobekCM.Tools.Custom_Tracer)">
-            <summary> Write the item viewer main section as HTML directly to the HTTP output stream </summary>
-            <param name="Output"> Response stream for the item viewer to write directly to </param>
-            <param name="Tracer"> Trace object keeps a list of each method executed and important milestones in rendering </param>
-        </member>
-        <member name="M:SobekCM.Library.ItemViewer.Viewers.RTI_ItemViewer.Add_Main_Viewer_Section(System.Web.UI.WebControls.PlaceHolder,SobekCM.Tools.Custom_Tracer)">
-            <summary> Allows controls to be added directory to a place holder, rather than just writing to the output HTML stream </summary>
-            <param name="MainPlaceHolder"> Main place holder ( &quot;mainPlaceHolder&quot; ) in the itemNavForm form into which the bulk of the item viewer's output is displayed</param>
-            <param name="Tracer"> Trace object keeps a list of each method executed and important milestones in rendering </param>
-            <remarks> This method does nothing, since nothing is added to the place holder as a control for this item viewer </remarks>
-        </member>
-        <member name="M:SobekCM.Library.ItemViewer.Viewers.RTI_ItemViewer.Write_Within_HTML_Head(System.IO.TextWriter,SobekCM.Tools.Custom_Tracer)">
-            <summary> Write any additional values within the HTML Head of the final served page </summary>
-            <param name="Output"> Output stream currently within the HTML head tags </param>
-            <param name="Tracer"> Trace object keeps a list of each method executed and important milestones in rendering </param>
-            <remarks> By default this does nothing, but can be overwritten by all the individual item viewers </remarks>
-        </member>
-        <member name="M:SobekCM.Library.ItemViewer.Viewers.RTI_ItemViewer_Prototyper.#ctor">
-            <summary> Constructor for a new instance of the RTI_ItemViewerPrototyper class </summary>
-        </member>
-        <member name="M:SobekCM.Library.ItemViewer.Viewers.RTI_ItemViewer_Prototyper.Include_Viewer(SobekCM.Core.BriefItem.BriefItemInfo)">
-            <summary> Indicates if the specified item matches the basic requirements for this viewer, or
-            if this viewer should be ignored for this item </summary>
-            <param name="CurrentItem"> Digital resource to examine to see if this viewer really should be included </param>
-            <returns> If the user elected to add the RTI, who are we to disagree?  always returns TRUE </returns>
-        </member>
-        <member name="M:SobekCM.Library.ItemViewer.Viewers.RTI_ItemViewer_Prototyper.Override_On_Checkout(SobekCM.Core.BriefItem.BriefItemInfo)">
-            <summary> Flag indicates if this viewer should be override on checkout </summary>
-            <param name="CurrentItem"> Digital resource to examine to see if this viewer should really be overriden </param>
-            <returns> TRUE always, since RTI should never be shown if an item is checked out </returns>
-        </member>
-        <member name="M:SobekCM.Library.ItemViewer.Viewers.RTI_ItemViewer_Prototyper.Has_Access(SobekCM.Core.BriefItem.BriefItemInfo,SobekCM.Core.Users.User_Object,System.Boolean)">
-            <summary> Flag indicates if the current user has access to this viewer for the item </summary>
-            <param name="CurrentItem"> Digital resource to see if the current user has correct permissions to use this viewer </param>
-            <param name="CurrentUser"> Current user, who may or may not be logged on </param>
-            <param name="IpRestricted"> Flag indicates if this item is IP restricted AND if the current user is outside the ranges </param>
-            <returns> TRUE if the user has access to use this viewer, otherwise FALSE </returns>
-        </member>
-        <member name="M:SobekCM.Library.ItemViewer.Viewers.RTI_ItemViewer_Prototyper.Add_Menu_items(SobekCM.Core.BriefItem.BriefItemInfo,SobekCM.Core.Users.User_Object,SobekCM.Core.Navigation.Navigation_Object,System.Collections.Generic.List{SobekCM.Library.ItemViewer.Menu.Item_MenuItem},System.Boolean)">
-            <summary> Gets the menu items related to this viewer that should be included on the main item (digital resource) menu </summary>
-            <param name="CurrentItem"> Digital resource object, which can be used to ensure if and how this viewer should appear 
-            in the main item (digital resource) menu </param>
-            <param name="CurrentUser"> Current user, who may or may not be logged on </param>
-            <param name="CurrentRequest"> Information about the current request </param>
-            <param name="MenuItems"> List of menu items, to which this method may add one or more menu items </param>
-            <param name="IpRestricted"> Flag indicates if this item is IP restricted AND if the current user is outside the ranges </param>
-        </member>
-        <member name="M:SobekCM.Library.ItemViewer.Viewers.RTI_ItemViewer_Prototyper.Create_Viewer(SobekCM.Core.BriefItem.BriefItemInfo,SobekCM.Core.Users.User_Object,SobekCM.Core.Navigation.Navigation_Object,SobekCM.Tools.Custom_Tracer)">
-            <summary> Creates and returns the an instance of the <see cref="T:SobekCM.Library.ItemViewer.Viewers.JPEG_ItemViewer"/> class for showing a  
-            JPEG image from a page within a digital resource during execution of a single HTTP request. </summary>
-            <param name="CurrentItem"> Digital resource object </param>
-            <param name="CurrentUser"> Current user, who may or may not be logged on </param>
-            <param name="CurrentRequest"> Information about the current request </param>
-            <param name="Tracer"> Trace object keeps a list of each method executed and important milestones in rendering </param>
-            <returns> Fully built and initialized <see cref="T:SobekCM.Library.ItemViewer.Viewers.JPEG_ItemViewer"/> object </returns>
-            <remarks> This method is called whenever a request requires the actual viewer to be created to render the HTML for
-            the digital resource requested.  The created viewer is then destroyed at the end of the request </remarks>
         </member>
         <member name="T:SobekCM.Library.ItemViewer.Viewers.TEI_ItemViewer_Prototyper">
             <summary> TEI viewer prototyper, which is used to check to see if the TEI viewer should really be shown, 
@@ -15012,11 +14998,18 @@
             <summary> Constructor for a new instance of the Edit_TEI_Item_MySobekViewer class </summary>
             <param name="RequestSpecificValues"> All the necessary, non-global data specific to the current request </param>
         </member>
+        <member name="M:SobekCM.Library.MySobekViewer.Edit_TEI_Item_MySobekViewer.ScaleImage(System.Drawing.Image,System.Int32,System.Int32)">
+            <summary> Scales an existing SourceImage to a new max width / max height </summary>
+            <param name="SourceImage"> Source image </param>
+            <param name="MaxWidth"> Maximum width for the new image </param>
+            <param name="MaxHeight"> Maximum height for the new image </param>
+            <returns> Newly scaled image, without changing the original source image </returns>
+        </member>
         <member name="M:SobekCM.Library.MySobekViewer.Edit_TEI_Item_MySobekViewer.Write_HTML(System.IO.TextWriter,SobekCM.Tools.Custom_Tracer)">
             <summary> Add the HTML to be displayed in the main SobekCM viewer area </summary>
             <param name="Output"> Textwriter to write the HTML for this viewer</param>
             <param name="Tracer"> Trace object keeps a list of each method executed and important milestones in rendering</param>
-            <remarks> This adds the template HTML for step 2 and the congratulations text for step 4 </remarks>
+            <remarks> This adds the CompleteTemplate HTML for step 2 and the congratulations text for step 4 </remarks>
         </member>
         <member name="M:SobekCM.Library.MySobekViewer.Edit_TEI_Item_MySobekViewer.Write_ItemNavForm_Closing(System.IO.TextWriter,SobekCM.Tools.Custom_Tracer)">
             <summary> This is an opportunity to write HTML directly into the main form, without
@@ -15030,86 +15023,37 @@
             <param name="MainPlaceHolder"> Main place holder to which all main controls are added </param>
             <param name="Tracer"> Trace object keeps a list of each method executed and important milestones in rendering</param>
         </member>
+        <member name="M:SobekCM.Library.MySobekViewer.Edit_TEI_Item_MySobekViewer.Standard_Citation_String(System.Boolean,SobekCM.Tools.Custom_Tracer)">
+            <summary> Returns the basic information about this digital resource in standard format </summary>
+            <param name="Include_Links"> Flag tells whether to include the search links from this citation view </param>
+            <param name="Tracer"> Trace object keeps a list of each method executed and important milestones in rendering </param>
+            <returns> HTML string with the basic information about this digital resource for display </returns>
+        </member>
+        <member name="M:SobekCM.Library.MySobekViewer.Edit_TEI_Item_MySobekViewer.Write_Within_HTML_Head(System.IO.TextWriter,SobekCM.Tools.Custom_Tracer)">
+            <summary> Write any additional values within the HTML Head of the final served page </summary>
+            <param name="Output"> Output stream currently within the HTML head tags </param>
+            <param name="Tracer"> Trace object keeps a list of each method executed and important milestones in rendering </param>
+            <returns> TRUE if this should completely override the default added by the admin or mySobek viewer </returns>
+        </member>
+        <member name="P:SobekCM.Library.MySobekViewer.Edit_TEI_Item_MySobekViewer.Current_Template_Banner">
+            <summary> Gets the banner from the current CompleteTemplate, if there is one </summary>
+        </member>
+        <member name="P:SobekCM.Library.MySobekViewer.Edit_TEI_Item_MySobekViewer.Web_Title">
+            <summary> Title for the page that displays this viewer, this is shown in the search box at the top of the page, just below the banner </summary>
+            <value> This returns the title of the current <see cref="T:SobekCM.Library.Citation.Template.CompleteTemplate"/> object </value>
+        </member>
         <member name="P:SobekCM.Library.MySobekViewer.Edit_TEI_Item_MySobekViewer.Standard_Navigation_Type">
             <summary> Navigation type to be displayed (mostly used by the mySobek viewers) </summary>
             <value> This returns none since this viewer writes all the necessary navigational elements </value>
             <remarks> This is set to NONE if the viewer will write its own navigation and ADMIN if the standard
             administrative tabs should be included as well.  </remarks>
         </member>
-        <member name="P:SobekCM.Library.MySobekViewer.Edit_TEI_Item_MySobekViewer.Web_Title">
-            <summary> Title for the page that displays this viewer, this is shown in the search box at the top of the page, just below the banner </summary>
-            <value> This returns the value 'File Management' </value>
-        </member>
-        <member name="P:SobekCM.Library.MySobekViewer.Edit_TEI_Item_MySobekViewer.Viewer_Behaviors">
-            <summary> Gets the collection of special behaviors which this admin or mySobek viewer
-            requests from the main HTML subwriter. </summary>
-            <value> This tells the HTML and mySobek writers to mimic the currentItem viewer </value>
-        </member>
         <member name="P:SobekCM.Library.MySobekViewer.Edit_TEI_Item_MySobekViewer.Upload_File_Possible">
-            <summary> Returns a flag indicating whether the file upload specific holder in the itemNavForm form will be utilized 
-            for the current request, or if it can be hidden/omitted. </summary>
-            <value> Returns TRUE since files can be be uploaded through this viewer </value>
-        </member>
-        <member name="M:SobekCM.Library.MySobekViewer.Edit_TEI_Item_MySobekViewer2.#ctor(SobekCM.Library.RequestCache)">
-            <summary> Constructor for a new instance of the Edit_TEI_Item_MySobekViewer class </summary>
-            <param name="RequestSpecificValues"> All the necessary, non-global data specific to the current request </param>
-        </member>
-        <member name="M:SobekCM.Library.MySobekViewer.Edit_TEI_Item_MySobekViewer2.ScaleImage(System.Drawing.Image,System.Int32,System.Int32)">
-            <summary> Scales an existing SourceImage to a new max width / max height </summary>
-            <param name="SourceImage"> Source image </param>
-            <param name="MaxWidth"> Maximum width for the new image </param>
-            <param name="MaxHeight"> Maximum height for the new image </param>
-            <returns> Newly scaled image, without changing the original source image </returns>
-        </member>
-        <member name="M:SobekCM.Library.MySobekViewer.Edit_TEI_Item_MySobekViewer2.Write_HTML(System.IO.TextWriter,SobekCM.Tools.Custom_Tracer)">
-            <summary> Add the HTML to be displayed in the main SobekCM viewer area </summary>
-            <param name="Output"> Textwriter to write the HTML for this viewer</param>
-            <param name="Tracer"> Trace object keeps a list of each method executed and important milestones in rendering</param>
-            <remarks> This adds the CompleteTemplate HTML for step 2 and the congratulations text for step 4 </remarks>
-        </member>
-        <member name="M:SobekCM.Library.MySobekViewer.Edit_TEI_Item_MySobekViewer2.Write_ItemNavForm_Closing(System.IO.TextWriter,SobekCM.Tools.Custom_Tracer)">
-            <summary> This is an opportunity to write HTML directly into the main form, without
-            using the pop-up html form architecture </summary>
-            <param name="Output"> Textwriter to write the pop-up form HTML for this viewer </param>
-            <param name="Tracer"> Trace object keeps a list of each method executed and important milestones in rendering</param>
-            <remarks> This text will appear within the ItemNavForm form tags </remarks>
-        </member>
-        <member name="M:SobekCM.Library.MySobekViewer.Edit_TEI_Item_MySobekViewer2.Add_Controls(System.Web.UI.WebControls.PlaceHolder,SobekCM.Tools.Custom_Tracer)">
-            <summary> Add controls directly to the form in the main control area placeholder </summary>
-            <param name="MainPlaceHolder"> Main place holder to which all main controls are added </param>
-            <param name="Tracer"> Trace object keeps a list of each method executed and important milestones in rendering</param>
-        </member>
-        <member name="M:SobekCM.Library.MySobekViewer.Edit_TEI_Item_MySobekViewer2.Standard_Citation_String(System.Boolean,SobekCM.Tools.Custom_Tracer)">
-            <summary> Returns the basic information about this digital resource in standard format </summary>
-            <param name="Include_Links"> Flag tells whether to include the search links from this citation view </param>
-            <param name="Tracer"> Trace object keeps a list of each method executed and important milestones in rendering </param>
-            <returns> HTML string with the basic information about this digital resource for display </returns>
-        </member>
-        <member name="M:SobekCM.Library.MySobekViewer.Edit_TEI_Item_MySobekViewer2.Write_Within_HTML_Head(System.IO.TextWriter,SobekCM.Tools.Custom_Tracer)">
-            <summary> Write any additional values within the HTML Head of the final served page </summary>
-            <param name="Output"> Output stream currently within the HTML head tags </param>
-            <param name="Tracer"> Trace object keeps a list of each method executed and important milestones in rendering </param>
-            <returns> TRUE if this should completely override the default added by the admin or mySobek viewer </returns>
-        </member>
-        <member name="P:SobekCM.Library.MySobekViewer.Edit_TEI_Item_MySobekViewer2.Current_Template_Banner">
-            <summary> Gets the banner from the current CompleteTemplate, if there is one </summary>
-        </member>
-        <member name="P:SobekCM.Library.MySobekViewer.Edit_TEI_Item_MySobekViewer2.Web_Title">
-            <summary> Title for the page that displays this viewer, this is shown in the search box at the top of the page, just below the banner </summary>
-            <value> This returns the title of the current <see cref="T:SobekCM.Library.Citation.Template.CompleteTemplate"/> object </value>
-        </member>
-        <member name="P:SobekCM.Library.MySobekViewer.Edit_TEI_Item_MySobekViewer2.Standard_Navigation_Type">
-            <summary> Navigation type to be displayed (mostly used by the mySobek viewers) </summary>
-            <value> This returns none since this viewer writes all the necessary navigational elements </value>
-            <remarks> This is set to NONE if the viewer will write its own navigation and ADMIN if the standard
-            administrative tabs should be included as well.  </remarks>
-        </member>
-        <member name="P:SobekCM.Library.MySobekViewer.Edit_TEI_Item_MySobekViewer2.Upload_File_Possible">
             <summary> Returns a flag indicating whether the file upload specific holder in the itemNavForm form will be utilized 
             for the current request, or if it can be hidden/omitted. </summary>
             <value> Sometimes returns TRUE when files can be be uploaded through this viewer </value>
         </member>
-        <member name="P:SobekCM.Library.MySobekViewer.Edit_TEI_Item_MySobekViewer2.Viewer_Behaviors">
+        <member name="P:SobekCM.Library.MySobekViewer.Edit_TEI_Item_MySobekViewer.Viewer_Behaviors">
             <summary> Gets the collection of special behaviors which this admin or mySobek viewer
             requests from the main HTML subwriter. </summary>
             <value> This tells the HTML and mySobek writers to mimic the currentItem viewer </value>
@@ -15426,48 +15370,48 @@
         <member name="P:SobekCM.Library.UI.UI_ApplicationCache_Gateway.WebContent_Hierarchy">
             <summary> Get the complete hierarchy of non-aggregational static web content pages and redirects, used for navigation </summary>
         </member>
-        <member name="T:SobekCM.Library.UploadiFive.UploadiFive_Settings">
+        <member name="T:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings">
             <summary> Class holds all the individual setting values for the uploaders </summary>
-            <remarks> This helper class is utilized internally by both the <see cref="T:SobekCM.Library.UploadiFive.UploadiFive"/> and <see cref="T:SobekCM.Library.UploadiFive.UploadiFiveControl"/> classes.  
+            <remarks> This helper class is utilized internally by both the <see cref="T:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl"/> and <see cref="T:SobekCM.Library.Helpers.UploadiFive.UploadiFive"/> classes.  
             This class contains all the properties and does some of the actual HTML writing as well </remarks>
         </member>
-        <member name="M:SobekCM.Library.UploadiFive.UploadiFive_Settings.#ctor">
+        <member name="M:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.#ctor">
             <summary> Constructor for a new instance of the UploadiFive_Settings class </summary>
         </member>
-        <member name="M:SobekCM.Library.UploadiFive.UploadiFive_Settings.Add_To_Stream(System.IO.TextWriter,System.String,System.String)">
+        <member name="M:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.Add_To_Stream(System.IO.TextWriter,System.String,System.String)">
             <summary> Add the file input and the necessary script section, with
             all the options specfiedi here, directly to the streamwriter </summary>
             <param name="Output"> Writer to write to the stream </param>
             <param name="Extra_Indent"> Extra indent to begin each line with (purely for formatting) </param>
             <param name="Invalid_Message"> Message to display on fallback, particularly when HTML5 and flash both fail </param>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.Version">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.Version">
             <summary> Version being utilized, either the HTML5 version (UploadiFive)
             or the FLASH version (Uploadify) </summary>
             <value> Default is to use the HTML5 version </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.FileInputID">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.FileInputID">
             <summary> ID to use for the file input element </summary>
             <value> Default value is 'file_upload' </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.FileInputClass">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.FileInputClass">
             <summary> Class to use for the file input element </summary>
             <value> Default value is 'file_upload' </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.UseSecureFileHandler">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.UseSecureFileHandler">
             <summary> Flag indicates if the secure file handler option should be used </summary>
             <remarks> This sets a value in the session state and then checks it upon upload </remarks>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.SubmitWhenQueueCompletes">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.SubmitWhenQueueCompletes">
             <summary> Flag indicates if the form should be submitted once the uploaded queue completes </summary>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.UploadPath">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.UploadPath">
             <summary> Path where the uploaded files should go </summary>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.AllowedFileExtensions">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.AllowedFileExtensions">
             <summary> List of file extensions allowed </summary>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.DisallowedFileExtenstionMessage">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.DisallowedFileExtenstionMessage">
             <summary> If a user attempts to upload a disallowed file extension, this is the
             message that will be popped up to the user </summary>
             <remarks> You can use '&lt;extension&gt;' in the string to have the extension
@@ -15475,61 +15419,61 @@
             cause no alert to happen clientside, but the upload will be cancelled. </remarks>
             <value> Default value is 'File types of '&lt;extension&gt;' are not allowed' </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.RevertToFlashVersion">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.RevertToFlashVersion">
             <summary> Flag indicates that if the client does not have HTML5 with their browser, to revert
             to the Flash version, if it is available </summary>
             <value> Default value is FALSE </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.RevertedButtonClass">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.RevertedButtonClass">
             <summary> If this is set, this class will be used for the button when the HTML5 version 
             has reverted to the flash version. </summary>
             <value> Can be useful to see if it reverts </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.NoHtml5OrFlashMessage">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.NoHtml5OrFlashMessage">
             <summary> Message displayed if the user has neither HTML5 on their browse nor Flash installed </summary>
             <value> Default value is 'Your browse must either be HTML5-compliant or have Adobe Flash installed to use this upload feature'.</value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.ServerSideFileName">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.ServerSideFileName">
             <summary> Name for the final server-side file, which allows overriding the default name,
             which would otherwise match the uploaded name </summary>
             <remarks> This can be used to avoid having to manually rename the file after upload </remarks>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.ReturnToken">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.ReturnToken">
             <summary> Return token is used to pass back the information about which file(s) were uploaded </summary>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.Auto">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.Auto">
             <summary> If set to true, files will automatically upload when added to the queue </summary>
             <value> Default value from UploadiFive is TRUE </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.ButtonClass">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.ButtonClass">
             <summary> A class name to add to the UploadiFive button DOM element </summary>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.ButtonText">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.ButtonText">
             <summary> The text to display inside the browse button </summary>
             <remarks> This text is rendered as HTML and may contain tags or HTML entities. </remarks>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.CheckScript">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.CheckScript">
             <summary> The path to the server-side files that checks whether a files with the 
             same name as that being uploaded exists in the destination folder </summary>
             <remarks> If the file does not exist, this script should return 0.  If the files 
             does exist, the script should return 1.</remarks>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.DragAndDrop">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.DragAndDrop">
             <summary> If set to false, drag and drop capabilities will not be enabled </summary>
             <value> Default value from UploadiFive is TRUE </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.FileObjName">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.FileObjName">
             <summary> The name of the file object to use in your server-side script </summary>
             <remarks> For example, in PHP, if this option is set to ‘the_files’, you can 
             access the files that have been uploaded using $_FILES['the_files'];</remarks>
             <value> Default value from UploadiFive is 'Filedata' </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.FileSizeLimit">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.FileSizeLimit">
             <summary> The maximum upload size allowed in KB </summary>
             <remarks> This option also accepts a unit.  If using a unit, the value must begin 
             with a number and end in either KB, MB, or GB.  Set this option to 0 for no limit. </remarks>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.FileType">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.FileType">
             <summary> The type of files allowed for upload </summary>
             <remarks> This is taken from the file’s mime type.  To allow all images, set this 
             option to ‘image’.  To allow a specific type of image, set this option to ‘image/png’.  
@@ -15537,79 +15481,79 @@
             JSON array to allow a specific set of fileTypes. </remarks>
             <value> Default value from UploadiFive is 'false' </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.FormData">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.FormData">
             <summary> Additional data to send to the server-side upload script </summary>
             <remarks> Data sent via this option will be sent via the headers and can be 
             accessed via the $_POST array (if using the ‘post’ method).  So if you send 
             something like {‘someKey’ : ‘someValue’}, then you can access it as $_POST['someKey']. </remarks>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.ButtonHeight">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.ButtonHeight">
             <summary> The height of the browse button in pixels </summary>
             <value> Default value from UploadiFive is 30 </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.ItemTemplate">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.ItemTemplate">
             <summary> The itemTemplate option allows you to specify a special HTML template for 
             each item that is added to the queue </summary>
             <value> The outtermost item element MUST have the class “uploadifive-queue-item” as 
             the code uses this class to perform various tasks.
             See instructions on main Uploadify site for more information. </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.Method">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.Method">
             <summary> The type of method to use when submitting the form  </summary>
             <remarks> If set to ’get’, the formData values are sent via the querystring.  If 
             set to ‘post’, the fromData values are sent via the headers. </remarks>
             <value> Default value is POST </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.Multi">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.Multi">
             <summary> Whether or not to allow multiple file selection in the browse dialog window </summary>
             <remarks> Setting to true will allow multiple file selection.  This does not affect the 
             amount of files that can be added tot he queue.  To limit the queue size to 1, use 
             the QueueSizeLimit option. </remarks>
             <value> Default value from UploadiFive is TRUE </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.QueueID">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.QueueID">
             <summary> The ID of the element you want to use as a file queue </summary>
             <remarks> This element will also act as the drop target for files if DragAndDrop (dnd) is 
             set to true.  If the value is set to false, a queue will be created and an ID will be 
             assigned to it. </remarks>
             <value> Default value from UploadiFive is 'false; </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.QueueSizeLimit">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.QueueSizeLimit">
             <summary> The maximum number of files you can have in the queue at one time </summary>
             <remarks> This does not affect the amount of files that may be uploaded.  To set 
             the amount  of files you may upload, use the uploadLimit option.  Set to 0 to set 
             the limit to unlimited. </remarks>
             <value> Default value from UploadiFive is 0 </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.RemoveCompleted">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.RemoveCompleted">
             <summary> Whether or not to remove items that have completed uploading from the queue </summary>
             <value> Default value from UploadiFive is FALSE </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.Swf">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.Swf">
             <summary> This is the location of the uploadify.swf file, including the name of the script </summary>
             <remarks> Default, if using flash, is 'uploadify/uploadify.swf' </remarks>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.SimUploadLimit">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.SimUploadLimit">
             <summary> The number of files that can be simultaneously uploaded at any given time </summary>
             <remarks> Set to 0 to remove the limit.</remarks> 
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.TruncateLength">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.TruncateLength">
             <summary> The number of characters at which to truncate the file name in the queue </summary>
             <remarks> Set to 0 to never truncate. </remarks>
             <value> Default value from UploadiFive is 0 </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.UploadLimit">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.UploadLimit">
             <summary> The maximum number of files that may be uploaded </summary>
             <remarks> Set to 0 to remove any limit.  This does not affect the number of files that 
             may be added to the queue.  For that, use the QueueSizeLimit option. </remarks>
             <value> Default value from UploadiFive is 0 </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.UploadScript">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.UploadScript">
             <summary> The path to the script that will process the uploaded file </summary>
             <remarks> To use the provided ASP.net classes/helpers, do NOT set this directly.  For the FLASH version, 
             this actually maps to the 'uploader' value. </remarks>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive_Settings.ButtonWidth">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Settings.ButtonWidth">
             <summary> The width of the browse button in pixels </summary>
             <value> Default value from UploadiFive is 100 </value>
         </member>
@@ -15723,50 +15667,50 @@
             <param name="Main_Thumbnail"> Filename for the main thumbnail (which will NOT be restricted) </param>
             <returns> TRUE if successful, otherwise FALSE </returns>
         </member>
-        <member name="T:SobekCM.Library.UploadiFive.UploadiFive">
+        <member name="T:SobekCM.Library.Helpers.UploadiFive.UploadiFive">
             <summary> Class is used to write the upload HTML element and the script necessary
             for all the UploadiFive options </summary>
         </member>
-        <member name="M:SobekCM.Library.UploadiFive.UploadiFive.#ctor">
+        <member name="M:SobekCM.Library.Helpers.UploadiFive.UploadiFive.#ctor">
             <summary> Constructor for a new instance of the UploadiFive class </summary>
         </member>
-        <member name="M:SobekCM.Library.UploadiFive.UploadiFive.Add_To_Stream(System.IO.TextWriter)">
+        <member name="M:SobekCM.Library.Helpers.UploadiFive.UploadiFive.Add_To_Stream(System.IO.TextWriter)">
             <summary> Add the file input and the necessary script section, with
             all the options specfiedi here, directly to the streamwriter </summary>
             <param name="Output"> Writer to write to the stream </param>
         </member>
-        <member name="M:SobekCM.Library.UploadiFive.UploadiFive.HTML_To_Write">
+        <member name="M:SobekCM.Library.Helpers.UploadiFive.UploadiFive.HTML_To_Write">
             <summary> Returns the HTML to add a file input and the necessary
             script section to enable UploadiFive with these options </summary>
             <returns> HTML as a string </returns>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.Version">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.Version">
             <summary> Version being utilized, either the HTML5 version (UploadiFive)
             or the FLASH version (Uploadify) </summary>
             <value> Default is to use the HTML5 version </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.FileInputID">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.FileInputID">
             <summary> ID to use for the file input element </summary>
             <value> Default value is 'file_upload' </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.FileInputClass">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.FileInputClass">
             <summary> Class to use for the file input element </summary>
             <value> Default value is 'file_upload' </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.UseSecureFileHandler">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.UseSecureFileHandler">
             <summary> Flag indicates if the secure file handler option should be used </summary>
             <remarks> This sets a value in the session state and then checks it upon upload </remarks>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.SubmitWhenQueueCompletes">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.SubmitWhenQueueCompletes">
             <summary> Flag indicates if the form should be submitted once the uploaded queue completes </summary>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.UploadPath">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.UploadPath">
             <summary> Path where the uploaded files should go </summary>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.AllowedFileExtensions">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.AllowedFileExtensions">
             <summary> List of file extensions allowed </summary>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.DisallowedFileExtenstionMessage">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.DisallowedFileExtenstionMessage">
             <summary> If a user attempts to upload a disallowed file extension, this is the
             message that will be popped up to the user </summary>
             <remarks> You can use '&lt;extension&gt;' in the string to have the extension
@@ -15774,61 +15718,61 @@
             cause no alert to happen clientside, but the upload will be cancelled. </remarks>
             <value> Default value is 'File types of '&lt;extension&gt;' are not allowed' </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.RevertToFlashVersion">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.RevertToFlashVersion">
             <summary> Flag indicates that if the client does not have HTML5 with their browser, to revert
             to the Flash version, if it is available </summary>
             <value> Default value is FALSE </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.RevertedButtonClass">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.RevertedButtonClass">
             <summary> If this is set, this class will be used for the button when the HTML5 version 
             has reverted to the flash version. </summary>
             <value> Can be useful to see if it reverts </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.NoHtml5OrFlashMessage">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.NoHtml5OrFlashMessage">
             <summary> Message displayed if the user has neither HTML5 on their browse nor Flash installed </summary>
             <value> Default value is 'Your browse must either be HTML5-compliant or have Adobe Flash installed to use this upload feature'.</value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.ServerSideFileName">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.ServerSideFileName">
             <summary> Name for the final server-side file, which allows overriding the default name,
             which would otherwise match the uploaded name </summary>
             <remarks> This can be used to avoid having to manually rename the file after upload </remarks>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.ReturnToken">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.ReturnToken">
             <summary> Return token is used to pass back the information about which file(s) were uploaded </summary>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.Auto">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.Auto">
             <summary> If set to true, files will automatically upload when added to the queue </summary>
             <value> Default value from UploadiFive is TRUE </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.ButtonClass">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.ButtonClass">
             <summary> A class name to add to the UploadiFive button DOM element </summary>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.ButtonText">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.ButtonText">
             <summary> The text to display inside the browse button </summary>
             <remarks> This text is rendered as HTML and may contain tags or HTML entities. </remarks>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.CheckScript">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.CheckScript">
             <summary> The path to the server-side files that checks whether a files with the 
             same name as that being uploaded exists in the destination folder </summary>
             <remarks> If the file does not exist, this script should return 0.  If the files 
             does exist, the script should return 1.</remarks>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.DragAndDrop">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.DragAndDrop">
             <summary> If set to false, drag and drop capabilities will not be enabled </summary>
             <value> Default value from UploadiFive is TRUE </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.FileObjName">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.FileObjName">
             <summary> The name of the file object to use in your server-side script </summary>
             <remarks> For example, in PHP, if this option is set to ‘the_files’, you can 
             access the files that have been uploaded using $_FILES['the_files'];</remarks>
             <value> Default value from UploadiFive is 'Filedata' </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.FileSizeLimit">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.FileSizeLimit">
             <summary> The maximum upload size allowed in KB </summary>
             <remarks> This option also accepts a unit.  If using a unit, the value must begin 
             with a number and end in either KB, MB, or GB.  Set this option to 0 for no limit. </remarks>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.FileType">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.FileType">
             <summary> The type of files allowed for upload </summary>
             <remarks> This is taken from the file’s mime type.  To allow all images, set this 
             option to ‘image’.  To allow a specific type of image, set this option to ‘image/png’.  
@@ -15836,118 +15780,118 @@
             JSON array to allow a specific set of fileTypes. </remarks>
             <value> Default value from UploadiFive is 'false' </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.FormData">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.FormData">
             <summary> Additional data to send to the server-side upload script </summary>
             <remarks> Data sent via this option will be sent via the headers and can be 
             accessed via the $_POST array (if using the ‘post’ method).  So if you send 
             something like {‘someKey’ : ‘someValue’}, then you can access it as $_POST['someKey']. </remarks>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.ButtonHeight">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.ButtonHeight">
             <summary> The height of the browse button in pixels </summary>
             <value> Default value from UploadiFive is 30 </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.ItemTemplate">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.ItemTemplate">
             <summary> The itemTemplate option allows you to specify a special HTML template for 
             each item that is added to the queue </summary>
             <value> The outtermost item element MUST have the class “uploadifive-queue-item” as 
             the code uses this class to perform various tasks.
             See instructions on main Uploadify site for more information. </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.Method">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.Method">
             <summary> The type of method to use when submitting the form  </summary>
             <remarks> If set to ’get’, the formData values are sent via the querystring.  If 
             set to ‘post’, the fromData values are sent via the headers. </remarks>
             <value> Default value is POST </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.Multi">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.Multi">
             <summary> Whether or not to allow multiple file selection in the browse dialog window </summary>
             <remarks> Setting to true will allow multiple file selection.  This does not affect the 
             amount of files that can be added tot he queue.  To limit the queue size to 1, use 
             the QueueSizeLimit option. </remarks>
             <value> Default value from UploadiFive is TRUE </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.QueueID">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.QueueID">
             <summary> The ID of the element you want to use as a file queue </summary>
             <remarks> This element will also act as the drop target for files if DragAndDrop (dnd) is 
             set to true.  If the value is set to false, a queue will be created and an ID will be 
             assigned to it. </remarks>
             <value> Default value from UploadiFive is 'false; </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.QueueSizeLimit">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.QueueSizeLimit">
             <summary> The maximum number of files you can have in the queue at one time </summary>
             <remarks> This does not affect the amount of files that may be uploaded.  To set 
             the amount  of files you may upload, use the uploadLimit option.  Set to 0 to set 
             the limit to unlimited. </remarks>
             <value> Default value from UploadiFive is 0 </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.RemoveCompleted">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.RemoveCompleted">
             <summary> Whether or not to remove items that have completed uploading from the queue </summary>
             <value> Default value from UploadiFive is FALSE </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.SimUploadLimit">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.SimUploadLimit">
             <summary> The number of files that can be simultaneously uploaded at any given time </summary>
             <remarks> Set to 0 to remove the limit.</remarks> 
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.Swf">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.Swf">
             <summary> This is the location of the uploadify.swf file, including the name of the script </summary>
             <remarks> Default, if using flash, is 'uploadify/uploadify.swf' </remarks>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.TruncateLength">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.TruncateLength">
             <summary> The number of characters at which to truncate the file name in the queue </summary>
             <remarks> Set to 0 to never truncate. </remarks>
             <value> Default value from UploadiFive is 0 </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.UploadLimit">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.UploadLimit">
             <summary> The maximum number of files that may be uploaded </summary>
             <remarks> Set to 0 to remove any limit.  This does not affect the number of files that 
             may be added to the queue.  For that, use the QueueSizeLimit option. </remarks>
             <value> Default value from UploadiFive is 0 </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.UploadScript">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.UploadScript">
             <summary> The path to the script that will process the uploaded file </summary>
             <remarks> To use the provided ASP.net classes/helpers, do NOT set this directly </remarks>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFive.ButtonWidth">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFive.ButtonWidth">
             <summary> The width of the browse button in pixels </summary>
             <value> Default value from UploadiFive is 100 </value>
         </member>
-        <member name="T:SobekCM.Library.UploadiFive.UploadiFiveControl">
+        <member name="T:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl">
             <summary> Control is used for uploading files through the UploadiFive library </summary>
         </member>
-        <member name="M:SobekCM.Library.UploadiFive.UploadiFiveControl.#ctor">
+        <member name="M:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.#ctor">
             <summary> Constructor for a new instance of the UploadiFiveControl class </summary>
         </member>
-        <member name="M:SobekCM.Library.UploadiFive.UploadiFiveControl.RenderContents(System.Web.UI.HtmlTextWriter)">
+        <member name="M:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.RenderContents(System.Web.UI.HtmlTextWriter)">
             <summary> Writes the file input and script necessary for the upload of the files </summary>
             <param name="Output"> Stream to write to </param>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.Version">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.Version">
             <summary> Version being utilized, either the HTML5 version (UploadiFive)
             or the FLASH version (Uploadify) </summary>
             <value> Default is to use the HTML5 version </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.FileInputID">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.FileInputID">
             <summary> ID to use for the file input element </summary>
             <value> Default value is 'file_upload' </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.FileInputClass">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.FileInputClass">
             <summary> Class to use for the file input element </summary>
             <value> Default value is 'file_upload' </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.UseSecureFileHandler">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.UseSecureFileHandler">
             <summary> Flag indicates if the secure file handler option should be used </summary>
             <remarks> This sets a value in the session state and then checks it upon upload </remarks>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.SubmitWhenQueueCompletes">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.SubmitWhenQueueCompletes">
             <summary> Flag indicates if the form should be submitted once the uploaded queue completes </summary>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.UploadPath">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.UploadPath">
             <summary> Path where the uploaded files should go </summary>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.AllowedFileExtensions">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.AllowedFileExtensions">
             <summary> List of file extensions allowed </summary>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.DisallowedFileExtenstionMessage">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.DisallowedFileExtenstionMessage">
             <summary> If a user attempts to upload a disallowed file extension, this is the
             message that will be popped up to the user </summary>
             <remarks> You can use '&lt;extension&gt;' in the string to have the extension
@@ -15955,61 +15899,61 @@
             cause no alert to happen clientside, but the upload will be cancelled. </remarks>
             <value> Default value is 'File types of '&lt;extension&gt;' are not allowed' </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.RevertToFlashVersion">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.RevertToFlashVersion">
             <summary> Flag indicates that if the client does not have HTML5 with their browser, to revert
             to the Flash version, if it is available </summary>
             <value> Default value is FALSE </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.RevertedButtonClass">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.RevertedButtonClass">
             <summary> If this is set, this class will be used for the button when the HTML5 version 
             has reverted to the flash version. </summary>
             <value> Can be useful to see if it reverts </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.NoHtml5OrFlashMessage">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.NoHtml5OrFlashMessage">
             <summary> Message displayed if the user has neither HTML5 on their browse nor Flash installed </summary>
             <value> Default value is 'Your browse must either be HTML5-compliant or have Adobe Flash installed to use this upload feature'.</value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.ServerSideFileName">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.ServerSideFileName">
             <summary> Name for the final server-side file, which allows overriding the default name,
             which would otherwise match the uploaded name </summary>
             <remarks> This can be used to avoid having to manually rename the file after upload </remarks>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.ReturnToken">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.ReturnToken">
             <summary> Return token is used to pass back the information about which file(s) were uploaded </summary>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.Auto">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.Auto">
             <summary> If set to true, files will automatically upload when added to the queue </summary>
             <value> Default value from UploadiFive is TRUE </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.ButtonClass">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.ButtonClass">
             <summary> A class name to add to the UploadiFive button DOM element </summary>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.ButtonText">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.ButtonText">
             <summary> The text to display inside the browse button </summary>
             <remarks> This text is rendered as HTML and may contain tags or HTML entities. </remarks>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.CheckScript">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.CheckScript">
             <summary> The path to the server-side files that checks whether a files with the 
             same name as that being uploaded exists in the destination folder </summary>
             <remarks> If the file does not exist, this script should return 0.  If the files 
             does exist, the script should return 1.</remarks>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.DragAndDrop">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.DragAndDrop">
             <summary> If set to false, drag and drop capabilities will not be enabled </summary>
             <value> Default value from UploadiFive is TRUE </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.FileObjName">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.FileObjName">
             <summary> The name of the file object to use in your server-side script </summary>
             <remarks> For example, in PHP, if this option is set to ‘the_files’, you can 
             access the files that have been uploaded using $_FILES['the_files'];</remarks>
             <value> Default value from UploadiFive is 'Filedata' </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.FileSizeLimit">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.FileSizeLimit">
             <summary> The maximum upload size allowed in KB </summary>
             <remarks> This option also accepts a unit.  If using a unit, the value must begin 
             with a number and end in either KB, MB, or GB.  Set this option to 0 for no limit. </remarks>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.FileType">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.FileType">
             <summary> The type of files allowed for upload </summary>
             <remarks> This is taken from the file’s mime type.  To allow all images, set this 
             option to ‘image’.  To allow a specific type of image, set this option to ‘image/png’.  
@@ -16017,133 +15961,133 @@
             JSON array to allow a specific set of fileTypes. </remarks>
             <value> Default value from UploadiFive is 'false' </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.FormData">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.FormData">
             <summary> Additional data to send to the server-side upload script </summary>
             <remarks> Data sent via this option will be sent via the headers and can be 
             accessed via the $_POST array (if using the ‘post’ method).  So if you send 
             something like {‘someKey’ : ‘someValue’}, then you can access it as $_POST['someKey']. </remarks>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.ButtonHeight">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.ButtonHeight">
             <summary> The height of the browse button in pixels </summary>
             <value> Default value from UploadiFive is 30 </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.ItemTemplate">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.ItemTemplate">
             <summary> The itemTemplate option allows you to specify a special HTML template for 
             each item that is added to the queue </summary>
             <value> The outtermost item element MUST have the class “uploadifive-queue-item” as 
             the code uses this class to perform various tasks.
             See instructions on main Uploadify site for more information. </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.Method">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.Method">
             <summary> The type of method to use when submitting the form  </summary>
             <remarks> If set to ’get’, the formData values are sent via the querystring.  If 
             set to ‘post’, the fromData values are sent via the headers. </remarks>
             <value> Default value is POST </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.Multi">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.Multi">
             <summary> Whether or not to allow multiple file selection in the browse dialog window </summary>
             <remarks> Setting to true will allow multiple file selection.  This does not affect the 
             amount of files that can be added tot he queue.  To limit the queue size to 1, use 
             the QueueSizeLimit option. </remarks>
             <value> Default value from UploadiFive is TRUE </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.QueueID">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.QueueID">
             <summary> The ID of the element you want to use as a file queue </summary>
             <remarks> This element will also act as the drop target for files if DragAndDrop (dnd) is 
             set to true.  If the value is set to false, a queue will be created and an ID will be 
             assigned to it. </remarks>
             <value> Default value from UploadiFive is 'false; </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.QueueSizeLimit">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.QueueSizeLimit">
             <summary> The maximum number of files you can have in the queue at one time </summary>
             <remarks> This does not affect the amount of files that may be uploaded.  To set 
             the amount  of files you may upload, use the uploadLimit option.  Set to 0 to set 
             the limit to unlimited. </remarks>
             <value> Default value from UploadiFive is 0 </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.RemoveCompleted">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.RemoveCompleted">
             <summary> Whether or not to remove items that have completed uploading from the queue </summary>
             <value> Default value from UploadiFive is FALSE </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.SimUploadLimit">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.SimUploadLimit">
             <summary> The number of files that can be simultaneously uploaded at any given time </summary>
             <remarks> Set to 0 to remove the limit.</remarks> 
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.Swf">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.Swf">
             <summary> This is the location of the uploadify.swf file, including the name of the script </summary>
             <remarks> Default, if using flash, is 'uploadify/uploadify.swf' </remarks>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.TruncateLength">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.TruncateLength">
             <summary> The number of characters at which to truncate the file name in the queue </summary>
             <remarks> Set to 0 to never truncate. </remarks>
             <value> Default value from UploadiFive is 0 </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.UploadLimit">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.UploadLimit">
             <summary> The maximum number of files that may be uploaded </summary>
             <remarks> Set to 0 to remove any limit.  This does not affect the number of files that 
             may be added to the queue.  For that, use the QueueSizeLimit option. </remarks>
             <value> Default value from UploadiFive is 0 </value>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.UploadScript">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.UploadScript">
             <summary> The path to the script that will process the uploaded file </summary>
             <remarks> To use the provided ASP.net classes/helpers, do NOT set this directly </remarks>
         </member>
-        <member name="P:SobekCM.Library.UploadiFive.UploadiFiveControl.ButtonWidth">
+        <member name="P:SobekCM.Library.Helpers.UploadiFive.UploadiFiveControl.ButtonWidth">
             <summary> The width of the browse button in pixels </summary>
             <value> Default value from UploadiFive is 100 </value>
         </member>
-        <member name="T:SobekCM.Library.UploadiFive.UploadiFive_Method_Enum">
+        <member name="T:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Method_Enum">
             <summary> Enumeration for the type of method to use when submitting the form </summary>
         </member>
-        <member name="F:SobekCM.Library.UploadiFive.UploadiFive_Method_Enum.Post">
+        <member name="F:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Method_Enum.Post">
             <summary> FormData is sents as a HTML post to the server </summary>
         </member>
-        <member name="F:SobekCM.Library.UploadiFive.UploadiFive_Method_Enum.Get">
+        <member name="F:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Method_Enum.Get">
             <summary> FormData values are sent via the querystring </summary>
             <remarks> This is not supported by the related ASP.net classes </remarks>
         </member>
-        <member name="T:SobekCM.Library.UploadiFive.UploadiFive_Version_Enum">
+        <member name="T:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Version_Enum">
             <summary> Enumeration for the version being utilized, either the HTML5 version (UploadiFive)
             or the FLASH version (Uploadify) </summary>
         </member>
-        <member name="F:SobekCM.Library.UploadiFive.UploadiFive_Version_Enum.HTML5">
+        <member name="F:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Version_Enum.HTML5">
             <summary> HTML5 - UploadiFive </summary>
         </member>
-        <member name="F:SobekCM.Library.UploadiFive.UploadiFive_Version_Enum.Flash">
+        <member name="F:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Version_Enum.Flash">
             <summary> FLASH - Uploadify </summary>
         </member>
-        <member name="T:SobekCM.Library.UploadiFive.UploadiFive_Security_Token">
+        <member name="T:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Security_Token">
             <summary> Token used to add security, via adding a key to the session
             state, for uploading documents using UploadiFive through this system </summary>
         </member>
-        <member name="F:SobekCM.Library.UploadiFive.UploadiFive_Security_Token.UploadPath">
+        <member name="F:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Security_Token.UploadPath">
             <summary> Path where the uploaded files should go </summary>
         </member>
-        <member name="F:SobekCM.Library.UploadiFive.UploadiFive_Security_Token.AllowedFileExtensions">
+        <member name="F:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Security_Token.AllowedFileExtensions">
             <summary> List of file extensions allowed </summary>
         </member>
-        <member name="F:SobekCM.Library.UploadiFive.UploadiFive_Security_Token.FileObjName">
+        <member name="F:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Security_Token.FileObjName">
             <summary> The name of the file object to use in your server-side script </summary>
         </member>
-        <member name="F:SobekCM.Library.UploadiFive.UploadiFive_Security_Token.ThisGuid">
+        <member name="F:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Security_Token.ThisGuid">
             <summary> The GUID for this security token </summary>
         </member>
-        <member name="F:SobekCM.Library.UploadiFive.UploadiFive_Security_Token.ServerSideFileName">
+        <member name="F:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Security_Token.ServerSideFileName">
             <summary> Name for the final server-side file, which allows overriding the default name,
             which would otherwise match the uploaded name </summary>
             <remarks> This can be used to avoid having to manually rename the file after upload </remarks>
         </member>
-        <member name="F:SobekCM.Library.UploadiFive.UploadiFive_Security_Token.ReturnToken">
+        <member name="F:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Security_Token.ReturnToken">
             <summary> Return token is used to pass back the information about which file(s) were uploaded </summary>
         </member>
-        <member name="M:SobekCM.Library.UploadiFive.UploadiFive_Security_Token.#ctor(System.String,System.String,System.String,System.String)">
+        <member name="M:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Security_Token.#ctor(System.String,System.String,System.String,System.String)">
             <summary> Constructor for a new instance of the UploadiFive_Security_Token class </summary>
             <param name="UploadPath"> Path where the uploaded files should go </param>
             <param name="AllowedFileExtensions"> List of file extensions allowed </param>
             <param name="FileObjName"> The name of the file object to use in your server-side script </param>
             <param name="ReturnToken"> Return token </param>
         </member>
-        <member name="M:SobekCM.Library.UploadiFive.UploadiFive_Security_Token.#ctor(System.String,System.String,System.String,System.String,System.String)">
+        <member name="M:SobekCM.Library.Helpers.UploadiFive.UploadiFive_Security_Token.#ctor(System.String,System.String,System.String,System.String,System.String)">
             <summary> Constructor for a new instance of the UploadiFive_Security_Token class </summary>
             <param name="UploadPath"> Path where the uploaded files should go </param>
             <param name="AllowedFileExtensions"> List of file extensions allowed </param>
