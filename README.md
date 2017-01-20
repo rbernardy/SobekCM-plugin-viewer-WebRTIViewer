@@ -12,3 +12,4 @@
 <p>webRTIViewer - using their webrti sample RTI content as the default content if the rti sub-folder is not available in the SobekCM item content folder. The sample content used is in the webViewer/webrti folder in the <a href="http://vcg.isti.cnr.it/~palma/webRTIViewer.zip">webRTIViewer.zip</a> which is linked on the <a href="http://vcg.isti.cnr.it/rti/webviewer.php">WebRTIViewer</a> page [Link (code, binary and examples)].</p>
 <hr/>
 <p>Richard Bernardy - <a href="mailto:rbernard@usf.edu">rbernard@usf.edu</a> - 12/22/2016.</p>
+<p>I'd appreciate a courtesy notification by email if you find this plugin useful and are using it in your SobekCM-based respository.</p>
