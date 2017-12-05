@@ -17,6 +17,7 @@ C:\GitRepository\Plugins\RTI\Source\RTI\bin\Release\SobekCM_Tools.pdb
 C:\GitRepository\Plugins\RTI\Source\RTI\bin\Release\SobekCM_Tools.xml
 C:\GitRepository\Plugins\RTI\Source\RTI\obj\Release\RTI.dll
 C:\GitRepository\Plugins\RTI\Source\RTI\obj\Release\RTI.pdb
+C:\Users\rbernard\Desktop\gitextensions\SobekCM-plugin-viewer-WebRTIViewer\source\RTI\obj\Release\RTI.csprojResolveAssemblyReference.cache
 C:\Users\rbernard\Desktop\gitextensions\SobekCM-plugin-viewer-WebRTIViewer\source\RTI\bin\Release\RTI.dll
 C:\Users\rbernard\Desktop\gitextensions\SobekCM-plugin-viewer-WebRTIViewer\source\RTI\bin\Release\RTI.pdb
 C:\Users\rbernard\Desktop\gitextensions\SobekCM-plugin-viewer-WebRTIViewer\source\RTI\bin\Release\SobekCM_Core.dll
@@ -24,11 +25,13 @@ C:\Users\rbernard\Desktop\gitextensions\SobekCM-plugin-viewer-WebRTIViewer\sourc
 C:\Users\rbernard\Desktop\gitextensions\SobekCM-plugin-viewer-WebRTIViewer\source\RTI\bin\Release\SobekCM_Library.dll
 C:\Users\rbernard\Desktop\gitextensions\SobekCM-plugin-viewer-WebRTIViewer\source\RTI\bin\Release\SobekCM_Resource_Object.dll
 C:\Users\rbernard\Desktop\gitextensions\SobekCM-plugin-viewer-WebRTIViewer\source\RTI\bin\Release\SobekCM_Tools.dll
-C:\Users\rbernard\Desktop\gitextensions\SobekCM-plugin-viewer-WebRTIViewer\source\RTI\bin\Release\SobekCM_Core.xml
-C:\Users\rbernard\Desktop\gitextensions\SobekCM-plugin-viewer-WebRTIViewer\source\RTI\bin\Release\SobekCM_Engine_Library.xml
+C:\Users\rbernard\Desktop\gitextensions\SobekCM-plugin-viewer-WebRTIViewer\source\RTI\bin\Release\SobekCM_Core.pdb
+C:\Users\rbernard\Desktop\gitextensions\SobekCM-plugin-viewer-WebRTIViewer\source\RTI\bin\Release\SobekCM_Engine_Library.pdb
+C:\Users\rbernard\Desktop\gitextensions\SobekCM-plugin-viewer-WebRTIViewer\source\RTI\bin\Release\SobekCM_Library.pdb
 C:\Users\rbernard\Desktop\gitextensions\SobekCM-plugin-viewer-WebRTIViewer\source\RTI\bin\Release\SobekCM_Library.xml
+C:\Users\rbernard\Desktop\gitextensions\SobekCM-plugin-viewer-WebRTIViewer\source\RTI\bin\Release\SobekCM_Resource_Object.pdb
 C:\Users\rbernard\Desktop\gitextensions\SobekCM-plugin-viewer-WebRTIViewer\source\RTI\bin\Release\SobekCM_Resource_Object.xml
+C:\Users\rbernard\Desktop\gitextensions\SobekCM-plugin-viewer-WebRTIViewer\source\RTI\bin\Release\SobekCM_Tools.pdb
 C:\Users\rbernard\Desktop\gitextensions\SobekCM-plugin-viewer-WebRTIViewer\source\RTI\bin\Release\SobekCM_Tools.xml
-C:\Users\rbernard\Desktop\gitextensions\SobekCM-plugin-viewer-WebRTIViewer\source\RTI\obj\Release\RTI.csprojResolveAssemblyReference.cache
 C:\Users\rbernard\Desktop\gitextensions\SobekCM-plugin-viewer-WebRTIViewer\source\RTI\obj\Release\RTI.dll
 C:\Users\rbernard\Desktop\gitextensions\SobekCM-plugin-viewer-WebRTIViewer\source\RTI\obj\Release\RTI.pdb
