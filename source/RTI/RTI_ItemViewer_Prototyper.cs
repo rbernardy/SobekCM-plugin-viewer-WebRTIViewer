@@ -49,7 +49,6 @@ namespace RTI
             return !IpRestricted;
         }
 
-
         /// <summary> Gets the menu items related to this viewer that should be included on the main item (digital resource) menu </summary>
         /// <param name="CurrentItem"> Digital resource object, which can be used to ensure if and how this viewer should appear 
         /// in the main item (digital resource) menu </param>
